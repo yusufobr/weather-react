@@ -1,0 +1,138 @@
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #E3EAEC;
+}
+.app {
+  width: 90%;
+  max-width: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  
+  background-image: url("https://agaplex.com/qr/warm-bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+.app.cold {
+  background-image: url("https://agaplex.com/qr/cold-bg.jpg");
+  border-radius: 30px;
+}
+
+main {
+  min-height: 96vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2)
+  );
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
+}
+
+.search-bar::placeholder {
+  color: #e0e0e0;
+}
+
+.search-box .search-bar {
+  display: block;
+  margin-left: 5%;
+  width: 90%;
+  padding: 15px;
+  margin-top: 20px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.25);
+
+  color: #fff;
+  font-size: 20px;
+}
+
+.card {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  text-align: center;
+  margin: 20px 0 75px;
+}
+
+.location-box {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+.location-box .location {
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 50px;
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+.location-box .location:hover {
+  color: rgba(255, 255, 255, 0.336);
+}
+.location-box .date {
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px;
+}
+.location-box .date:hover {
+  color: rgba(255, 255, 255, 0.281);
+}
+.weather-box {
+  text-align: center;
+}
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 80px;
+  font-weight: 900;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+.weather-box .weather {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.country-symbole {
+  font-size: 25px;
+}
+
+.min-max {
+  color: #fff;
+}
