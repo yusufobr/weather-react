@@ -64,19 +64,22 @@ function App() {
           <div className="date absolute bottom-4">{dateBuilder(new Date())}</div>
         </div>
         {weather.main ? (
-          <div className="weather-box flex flex-col">
-            <div className="flex container">
-              <div className="temp">
-                {Math.round(weather.main.temp)}
-                <span>°C</span>
-              </div>
-              <div className="weather">
-                <span >{`${Math.round(weather.main.temp_min)} / ${Math.round(weather.main.temp_max)} °C`}</span>
-                <div>{weather.weather[0].description}</div>
+          <div className="weather-box flex flex-col gap-y-6">
+            <div className="container">
+              <div className="flex px-6">
+                <div className="temp">
+                  {Math.round(weather.main.temp)}
+                  <span>°C</span>
+                </div>
+                <div className="weather">
+                  <span >{`${Math.round(weather.main.temp_min)} / ${Math.round(weather.main.temp_max)} °C`}</span>
+                  <div>{weather.weather[0].description}</div>
+                </div>
+
               </div>
 
             </div>
-            <div className="container mx-auto px-6 mt-12">
+            <div className="container mx-auto px-6">
               <div className="bg-[#ffffff20] text-xl text-white p-2 rounded-xl myShadow">
                 <div className="grid grid-cols-3">
                   <div className="flex flex-col gap-2">
