@@ -49,7 +49,7 @@ main {
   margin-left: 5%;
   width: 90%;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 25px;
 
   appearance: none;
   background: none;
@@ -135,4 +135,8 @@ main {
 
 .min-max {
   color: #fff;
+}
+
+.myShadow {
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }

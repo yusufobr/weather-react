@@ -2,6 +2,9 @@ import { useState } from "react";
 import dateBuilder from "./dateBuilder";
 import "./App.css";
 import { AiOutlineSearch } from 'react-icons/ai'
+import { BiWind } from 'react-icons/bi'
+import { WiHumidity } from 'react-icons/wi'
+import { BsFillCloudsFill } from 'react-icons/bs'
 
 const api = {
   key: "7608c6676e5dad2935426db76a781601",
@@ -51,7 +54,7 @@ function App() {
         </div>
         <div className="location-box">
           {weather.main ? (
-            <div className="location">
+            <div className="location uppercase">
               {weather.name},{" "}
               <span className="country-symbole">{weather.sys.country}</span>
             </div>
@@ -61,15 +64,31 @@ function App() {
           <div className="date">{dateBuilder(new Date())}</div>
         </div>
         {weather.main ? (
-          <div className="weather-box">
+          <div className="weather-box flex flex-col">
             <div className="temp">
               {Math.round(weather.main.temp)}
               <span>°C</span>
             </div>
-            <div className="min-max">
-              min 20<span>°C</span> &nbsp;&nbsp; min 35<span>°C</span>
-            </div>
+            <span className="-mt-2 weather">{`${Math.round(weather.main.temp_min)} / ${Math.round(weather.main.temp_max)} °C`}</span>
             <div className="weather">{weather.weather[0].description}</div>
+            <div className="container mx-auto px-6 mt-12">
+              <div className="bg-[#ffffff20] text-xl text-white p-2 rounded-xl myShadow">
+                <div className="flex justify-between">
+                  <div className="flex flex-col gap-2">
+                    <span><BiWind size={30} /></span>
+                    <span>{`${Math.round(weather.wind.speed * 3.6)} km/h`}</span>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <span><WiHumidity size={30} /></span>
+                    <span>{weather.main.humidity} %</span>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <span><BsFillCloudsFill size={30} /></span>
+                    <span>{weather.main.humidity} hPa</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           <div></div>
