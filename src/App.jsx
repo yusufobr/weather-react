@@ -38,7 +38,7 @@ function App() {
           : "app cold"
       }
     >
-      <main>
+      <main className="relative">
         <div className="search-box text-white relative">
           <input
             type="text"
@@ -61,19 +61,24 @@ function App() {
           ) : (
             <div>Search a city...</div>
           )}
-          <div className="date">{dateBuilder(new Date())}</div>
+          <div className="date absolute bottom-4">{dateBuilder(new Date())}</div>
         </div>
         {weather.main ? (
           <div className="weather-box flex flex-col">
-            <div className="temp">
-              {Math.round(weather.main.temp)}
-              <span>°C</span>
+            <div className="flex container">
+              <div className="temp">
+                {Math.round(weather.main.temp)}
+                <span>°C</span>
+              </div>
+              <div className="weather">
+                <span >{`${Math.round(weather.main.temp_min)} / ${Math.round(weather.main.temp_max)} °C`}</span>
+                <div>{weather.weather[0].description}</div>
+              </div>
+
             </div>
-            <span className="-mt-2 weather">{`${Math.round(weather.main.temp_min)} / ${Math.round(weather.main.temp_max)} °C`}</span>
-            <div className="weather">{weather.weather[0].description}</div>
             <div className="container mx-auto px-6 mt-12">
               <div className="bg-[#ffffff20] text-xl text-white p-2 rounded-xl myShadow">
-                <div className="flex justify-between">
+                <div className="grid grid-cols-3">
                   <div className="flex flex-col gap-2">
                     <span><BiWind size={30} /></span>
                     <span>{`${Math.round(weather.wind.speed * 3.6)} km/h`}</span>
@@ -84,7 +89,7 @@ function App() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <span><BsFillCloudsFill size={30} /></span>
-                    <span>{weather.main.humidity} hPa</span>
+                    <span>{weather.main.pressure} hPa</span>
                   </div>
                 </div>
               </div>

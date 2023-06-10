@@ -90,9 +90,6 @@ main {
   width: 100%;
   padding: 15px;
 }
-.location-box .location:hover {
-  color: rgba(255, 255, 255, 0.336);
-}
 .location-box .date {
   text-align: center;
   color: rgba(255, 255, 255, 1);
@@ -124,7 +121,7 @@ main {
 }
 .weather-box .weather {
   color: #fff;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
